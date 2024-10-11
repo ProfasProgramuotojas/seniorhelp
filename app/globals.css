@@ -1,3 +1,55 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.senior-global {
+  display: flex;
+  flex-direction: column;
+}
+
+.senior-text {
+  font-size: 250%;
+  text-align: center;
+}
+
+.senior-header-text {
+  font-size: 250%;
+  text-align: left;
+}
+
+.senior-subheader-text {
+  font-size: 150%;
+  text-align: left;
+  margin-left: 10px;
+}
+
+.senior-header {
+  background: gray;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.senior-subheader {
+  background: gray;
+  width: 60%;
+  padding: 10px;
+  margin-left: 10px;
+  margin-bottom: 5px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.senior-body {
+  background: gray;
+  text-align: center;
+  padding: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-radius: 10px;
+}
