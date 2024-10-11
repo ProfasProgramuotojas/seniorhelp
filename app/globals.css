@@ -2,6 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.nav-main {
+  background-color: white;
+  border-top: 2px solid black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 150%;
+  bottom: 0;
+  position: fixed;
+}
+.nav-text{
+  margin-right: 10px;
+  text-align: right;
+}
+
+.arrow {
+  font-size: 250%;
+  transform: scaleX(-1);
+}
+
 .senior-global {
   display: flex;
   flex-direction: column;
@@ -24,7 +45,6 @@
 }
 
 .senior-header {
-  background: gray;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -32,7 +52,6 @@
 }
 
 .senior-subheader {
-  background: gray;
   width: 60%;
   padding: 10px;
   margin-left: 10px;
@@ -44,7 +63,7 @@
 }
 
 .senior-body {
-  background: gray;
+  background-color: white;
   text-align: center;
   padding: 20px;
   margin-right: 10px;
@@ -53,10 +72,12 @@
   margin-bottom: 5px;
   border-radius: 10px;
 }
-body{
+
+body {
   background-color: lightgray;
 
 }
+
 .main-container {
   display: flex;
   flex-direction: column;

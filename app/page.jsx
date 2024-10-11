@@ -1,6 +1,9 @@
-'use client'
+"use client";
+
+import { useEffect } from "react";
 
 export default function Home() {
+
   return (
     <div className="main-container">
       <div className="sveiki">Sveiki!</div>
