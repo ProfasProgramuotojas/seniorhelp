@@ -11,17 +11,16 @@ const page = () => {
     const fetch_tasks = async () => {
       const res = await get_tasks();
       setTasks(res);
-      console.log(res);
     };
     fetch_tasks();
   }, []);
 
   return (
     <div>
-      <div>Pasirinkite užduotį:</div>
+      <div className="volunteer-text">Pasirinkite užduotį:</div>
       {tasks.map((task, key) => {
         return (
-          <div key={key}>
+          <div key={key} className="volunteer-container">
             <Task data={task} />
           </div>
         );
