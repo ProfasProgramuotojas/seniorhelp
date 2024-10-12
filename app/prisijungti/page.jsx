@@ -7,10 +7,8 @@ const page = () => {
   const [name, setName] = useState();
 
   const handleSubmit = async () => {
-    // const res = await get_senior(name);
-    // const fullName = res.first_name + " " + res.last_name;
-    const fullName = "abrakadaabra"
-    const res = {location: "Vilbius"}
+    const res = await get_senior(name);
+    const fullName = res.first_name + " " + res.last_name;
     localStorage.setItem("name", fullName)
     localStorage.setItem("location", res.location)
 

@@ -9,8 +9,7 @@ const page = () => {
 
   useEffect(() => {
     const fetch_tasks = async () => {
-      // const res = await get_tasks();
-      const res = [{type: "Kompiuteris", name: "sika", date: Date.now().toString(), location: "Vilnius" }]//all events, structure: type, name, date, multiplier
+      const res = await get_tasks();
       setTasks(res);
       console.log(res);
     };
