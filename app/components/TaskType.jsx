@@ -12,7 +12,7 @@ const TaskType = ({ task }) => {
     const name = localStorage.getItem("name")
     const date = new Date(Date.now()).toISOString();
     const data = {type: task.type, location: location, date: date, name: name }
-    await add_task(data);
+    // await add_task(data);
   };
 
   return (
