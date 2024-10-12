@@ -15,12 +15,19 @@ const page = () => {
   const handleAddTask = async () => {
     const location = localStorage.getItem("location");
     const name = localStorage.getItem("name");
-    if (!location || !name) {
+    const phone = localStorage.getItem("phone");
+    if (!location || !name || !phone) {
       window.location.href = "/registruotis";
       console.log("wtf");
     } else {
       const date = new Date(Date.now()).toISOString();
-      const data = { type: type, location: location, date: date, name: name };
+      const data = {
+        type: type,
+        location: location,
+        date: date,
+        name: name,
+        phone: phone,
+      };
       await add_task(data);
     }
   };
@@ -29,7 +36,7 @@ const page = () => {
     <div className="main-container">
       <div className="pagalba-header">Reikia pagalbos su: {type}</div>
       <a className="help-box" href={`tel:${type[data]}`}>
-        <div>Skambinti: {data[type]}</div>
+        <div>Skambinti konsultacijai: {data[type]}</div>
       </a>
       <div
         className="help-box"
@@ -70,7 +77,9 @@ const page = () => {
       {done && (
         <div className="done-overlay">
           <div className="confirm-button">
-            <div className="senior-text">Pagalbos kvietimas užregistruotas</div>
+            <div className="senior-text">
+              Pagalbos kvietimas užregistruotas. Laukite skambučio
+            </div>
             <div
               className="senior-body"
               style={{ marginTop: 50, maxHeight: 150 }}

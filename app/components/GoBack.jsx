@@ -1,15 +1,21 @@
 "use client";
 
-import { useNavigate } from "react-router-dom";
-
 const GoBack = () => {
-  let navigate = useNavigate();
+  function getBeforePath(path) {
+    const parts = path.split("/");
+    parts.pop();
+    return parts.join("/");
+  }
+  const handleRedirect = () => {
+    const res = getBeforePath(window.location.href);
+    window.location.href = res;
+  };
 
   return (
     <div
       className="arrow"
       onClick={() => {
-        navigate(-1);
+        handleRedirect();
       }}
     >
       ➔

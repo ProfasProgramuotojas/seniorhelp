@@ -3,10 +3,12 @@
 import { get_tasks } from '../server_functions/get_tasks';
 import { useEffect, useState } from 'react';
 import Task from '../components/Task';
+import { delete_task } from '../server_functions/delete_task';
 
 const page = () => {
   const [tasks, setTasks] = useState([]);
   const [task, setTask] = useState(null);
+  const [phone, setPhone] = useState('')
 
   const [confirm, setConfirm] = useState(false);
   const [done, setDone] = useState(false);
@@ -16,8 +18,14 @@ const page = () => {
       const res = await get_tasks();
       setTasks(res);
     };
+    console.log(phone)
     fetch_tasks();
   }, []);
+
+  const handleAcceptTask = async () => {
+    console.log(task)
+    await delete_task(task.id)
+  }
 
   return (
     <div>
@@ -30,6 +38,7 @@ const page = () => {
             onClick={() => {
               setConfirm(true);
               setTask(task);
+              setPhone(task.number)
             }}
           >
             <Task data={task} />
@@ -49,6 +58,7 @@ const page = () => {
             <div
               className='volunteer-confirm-button'
               onClick={() => {
+                handleAcceptTask();
                 setDone(true);
               }}
             >
@@ -69,7 +79,7 @@ const page = () => {
       {done && (
         <div className='volunteer-done-overlay'>
           <div className='volunteer-confirm-button'>
-            <div className='senior-text'>Kvietimas priimtas</div>
+            <a href={`tel:${phone}`} className='senior-text'>Užduotis priimta. Susisiekite su senjoru: {phone}</a>
             <div
               className='senior-body'
               style={{ marginTop: 50, maxHeight: 150 }}

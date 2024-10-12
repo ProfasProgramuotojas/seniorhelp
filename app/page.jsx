@@ -1,8 +1,23 @@
 "use client";
-
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [loggedIn, setLoggedIn] = useState(true);
+
+  useEffect(() => {
+    const name = localStorage.getItem("name");
+    const location = localStorage.getItem("location");
+    const phone = localStorage.getItem("phone");
+    if (!name || !location || !phone) setLoggedIn(false);
+  }, []);
+
+  const handleSenior = () => {
+    if (loggedIn) {
+      window.location.href = "/senior";
+    } else {
+      window.location.href = "/registruotis";
+    }
+  };
 
   return (
     <div className="main-container">
@@ -10,7 +25,7 @@ export default function Home() {
       <div
         className="main-box"
         onClick={() => {
-          window.location.href = "senior";
+          handleSenior();
         }}
       >
         <div className="main-text">Man Reikia pagalbos</div>
