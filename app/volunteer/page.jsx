@@ -18,7 +18,7 @@ const page = () => {
 
   return (
     <div>
-      <div>Po apačia matote visus pagalbos prašymus</div>
+      <div>Pasirinkite užduotį:</div>
       {tasks.map((task, key) => {
         return (
           <div key={key}>
