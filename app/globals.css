@@ -6,12 +6,12 @@
   background-color: white;
   border-top: 2px solid black;
 }
-.volunteer-text{
+.volunteer-text {
   margin-top: 10px;
-  margin-left: 10px;
+  margin-left: 25px;
   font-size: 150%;
 }
-.task-topbar{
+.task-topbar {
   margin-top: 2px;
   margin-left: 7px;
   font-size: 16px;
@@ -21,23 +21,23 @@
   justify-content: space-between;
   margin-right: 7px;
 }
-.volunteer-container{
+.volunteer-container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.task-middlebar{
+.task-middlebar {
   font-size: 24px;
   margin-left: 10px;
 }
-.task-bottombar{
+.task-bottombar {
   margin-left: 7px;
   margin-right: 7px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.task-container{
+.task-container {
   margin-top: 10px;
   border: 2px solid black;
   border-radius: 20px;
@@ -57,8 +57,9 @@
   font-size: 150%;
   bottom: 0;
   position: fixed;
+  width: 100%;
 }
-.nav-text{
+.nav-text {
   margin-right: 10px;
   text-align: right;
 }
@@ -70,12 +71,9 @@
 
 .senior-global {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 150%;
-  position: fixed;
-  width: 100%;
-  height: 100px;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 100px;
 }
 .reg-container{
   display: flex;
@@ -276,4 +274,69 @@ body {
   margin: 10px;
   flex: 1;
   height: 150px;
+}
+
+.volunteer-confirm-overlay {
+  position: fixed;
+  width: 90%;
+  top: 200px;
+  bottom: 200px;
+  left: 20px;
+  right: 20px;
+  border: 2px solid black;
+  background-color: white;
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.volunteer-confirm-header {
+  font-size: 150%;
+  text-align: center;
+}
+
+.volunteer-confirm-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.volunteer-confirm-button {
+  border: 2px solid black;
+  background-color: rgba(0, 255, 0, 0.5);
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10px;
+  flex: 1;
+  height: 150px;
+}
+
+.volunteer-decline-button {
+  border: 2px solid black;
+  background-color: rgba(255, 0, 0, 0.5);
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10px;
+  flex: 1;
+  height: 150px;
+}
+
+.volunteer-done-overlay {
+  position: fixed;
+  width: 90%;
+  top: 25px;
+  right: 20px;
+  left: 20px;
+  bottom: 125px;
+  border: 2px solid black;
+  background-color: white;
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
