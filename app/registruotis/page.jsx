@@ -9,28 +9,34 @@ const page = () => {
   const handleSubmit = () => {
     localStorage.setItem("name", name);
     localStorage.setItem("location", location);
+    window.location.href = "/"
   };
 
   return (
-    <div>
+    <div className="reg-container">
+      <h1>Registracija</h1>
       <input
+      className="reg-input"
         placeholder="Įveskite savo vardą"
         onChange={(e) => {
           setName(e.target.value);
         }}
       ></input>
       <input
-        placeholder="Įveskite savo lokaciją"
+      className="reg-input"
+        placeholder="Įveskite savo tikslią lokaciją"
         onChange={(e) => {
           setLocation(e.target.value);
         }}
       ></input>
+      <p>Protopitui užtenka tik lokacijos ir vardo</p>
       <button
+      className="reg-submit"
         onClick={() => {
           handleSubmit();
         }}
       >
-        Submit
+        Registruotis
       </button>
     </div>
   );

@@ -1,8 +1,9 @@
-'use client';
+"use client";
 
-import { useParams } from 'next/navigation';
-import data from '../../../phones.json';
-import { useState } from 'react';
+import { useParams } from "next/navigation";
+import data from "../../../phones.json";
+import { useState } from "react";
+import { add_task } from "../../server_functions/add_task";
 
 const page = () => {
   const params = useParams();
@@ -11,14 +12,27 @@ const page = () => {
   const [confirm, setConfirm] = useState(false);
   const [done, setDone] = useState(false);
 
+  const handleAddTask = async () => {
+    const location = localStorage.getItem("location");
+    const name = localStorage.getItem("name");
+    if (!location || !name) {
+      window.location.href = "/registruotis";
+      console.log("wtf");
+    } else {
+      const date = new Date(Date.now()).toISOString();
+      const data = { type: type, location: location, date: date, name: name };
+      await add_task(data);
+    }
+  };
+
   return (
-    <div className='main-container'>
-      <div className='pagalba-header'>Reikia pagalbos su: {type}</div>
-      <a className='help-box' href={`tel:${type[data]}`}>
+    <div className="main-container">
+      <div className="pagalba-header">Reikia pagalbos su: {type}</div>
+      <a className="help-box" href={`tel:${type[data]}`}>
         <div>Skambinti: {data[type]}</div>
       </a>
       <div
-        className='help-box'
+        className="help-box"
         onClick={() => {
           setConfirm(true);
         }}
@@ -27,43 +41,44 @@ const page = () => {
       </div>
 
       {confirm && (
-        <div className='confirm-overlay'>
-          <div className='pagalba-header'>
+        <div className="confirm-overlay">
+          <div className="pagalba-header">
             Ar tikrai nori pasikviesti pagalbą į namus?
           </div>
-          <div className='confirm-box'>
+          <div className="confirm-box">
             <div
-              className='confirm-button'
+              className="confirm-button"
               onClick={() => {
+                handleAddTask();
                 setDone(true);
               }}
             >
-              <div className='senior-text'>Taip</div>
+              <div className="senior-text">Taip</div>
             </div>
             <div
-              className='decline-button'
+              className="decline-button"
               onClick={() => {
                 setConfirm(false);
               }}
             >
-              <div className='senior-text'>Ne</div>
+              <div className="senior-text">Ne</div>
             </div>
           </div>
         </div>
       )}
 
       {done && (
-        <div className='done-overlay'>
-          <div className='confirm-button'>
-            <div className='senior-text'>Pagalbos kvietimas užregistruotas</div>
+        <div className="done-overlay">
+          <div className="confirm-button">
+            <div className="senior-text">Pagalbos kvietimas užregistruotas</div>
             <div
-              className='senior-body'
+              className="senior-body"
               style={{ marginTop: 50, maxHeight: 150 }}
               onClick={() => {
-                window.location.href = '/';
+                window.location.href = "/";
               }}
             >
-              <div className='senior-text'>Uždaryti</div>
+              <div className="senior-text">Uždaryti</div>
             </div>
           </div>
         </div>
