@@ -5,6 +5,70 @@
 .nav-main {
   background-color: white;
   border-top: 2px solid black;
+
+.volunteer-text{
+  margin-top: 10px;
+  margin-left: 10px;
+  font-size: 150%;
+}
+.task-topbar{
+  margin-top: 2px;
+  margin-left: 7px;
+  font-size: 16px;
+  color: grey;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-right: 7px;
+}
+.volunteer-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.task-middlebar{
+  font-size: 24px;
+  margin-left: 10px;
+}
+.task-bottombar{
+  margin-left: 7px;
+  margin-right: 7px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.task-container{
+  margin-top: 10px;
+  border: 2px solid black;
+  border-radius: 20px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  width: 90%;
+  overflow: hidden;
+}
+.nav-main {
+  background-color: white;
+  border-top: 2px solid black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 150%;
+  bottom: 0;
+  position: fixed;
+}
+.nav-text{
+  margin-right: 10px;
+  text-align: right;
+}
+
+.arrow {
+  font-size: 250%;
+  transform: scaleX(-1);
+}
+
+.senior-global {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -36,7 +100,6 @@
 }
 
 .senior-subheader {
-  background: gray;
   width: 60%;
   padding: 10px;
   margin-left: 10px;
@@ -69,6 +132,7 @@
 body {
   background-color: lightgray;
 }
+
 .main-container {
   display: flex;
   flex-direction: column;

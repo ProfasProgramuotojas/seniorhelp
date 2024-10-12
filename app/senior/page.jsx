@@ -1,3 +1,4 @@
+
 import TaskType from '../components/TaskType';
 
 const types = [
@@ -14,6 +15,7 @@ const page = () => {
       <div className='senior-subheader-text'>Reikia pagalbos su:</div>
       {types.map((task) => {
         return <TaskType task={task} />;
+
       })}
     </div>
   );
