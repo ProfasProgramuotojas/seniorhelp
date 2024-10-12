@@ -28,7 +28,7 @@ const Task = ({ data }) => {
       </div>
       <div className="task-bottombar">
         <div>{date}</div>
-        <div>{multiplier}</div>
+        <div>valandos x {multiplier}</div>
       </div>
     </div>
   );
