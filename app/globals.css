@@ -95,7 +95,7 @@
   background-color: white;
 }
 .reg-container p{
-  color: grey;
+  color: gray;
   font-size: 150%;
 }
 .reg-container h1{
@@ -162,7 +162,7 @@
   border: 2px solid black;
 }
 body {
-  background-color: lightgray;
+  background-color: rgb(200, 226, 234);
 }
 
 .main-container {

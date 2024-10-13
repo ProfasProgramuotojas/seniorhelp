@@ -14,7 +14,6 @@ const Task = ({ data }) => {
     setDate(formattedDate);
 
     setMultiplier((1 + hours * 0.01).toFixed(2));
-    console.log(formattedDate);
   }, [data]);
 
   return (

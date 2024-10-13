@@ -18,7 +18,6 @@ const page = () => {
     const phone = localStorage.getItem("phone");
     if (!location || !name || !phone) {
       window.location.href = "/registruotis";
-      console.log("wtf");
     } else {
       const date = new Date(Date.now()).toISOString();
       const data = {

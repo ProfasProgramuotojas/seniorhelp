@@ -6,8 +6,8 @@ const NavBar = () => {
   return (
     <div className="nav-main">
       <GoBack />
-      <a className="nav-text" href="tel:+37063003800">
-        Pagalba su Programėle: +37063003800
+      <a className="nav-text" href="tel:+37060000000">
+        Pagalba su Programėle: +37060000000
       </a>
     </div>
   );
